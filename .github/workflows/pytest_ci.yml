@@ -5,15 +5,14 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: docker://josephhilby/lunch_and_learn_docker:latest
-      volumes:
-        - ${{ github.workspace }}:/app
 
     steps:
       -
         name: Checkout
         uses: actions/checkout@v3
+      -
+        name: Build Docker Image
+        run: docker/setup-buildx-action@v2
       -
         name: Run Tests
         run: |
