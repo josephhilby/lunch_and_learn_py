@@ -3,7 +3,7 @@
 FROM python:3.11-bullseye
 
 # Set working directory
-WORKDIR /app
+# WORKDIR /app
 
 # Copy requirements.txt to working directory
 COPY requirements.txt requirements.txt
