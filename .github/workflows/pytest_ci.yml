@@ -1,0 +1,16 @@
+name: Pytest Tests
+
+on: [push]
+
+jobs:
+  build:
+    name: Pytest in Pipenv
+    runs-on: ubuntu-latest
+    container:
+      image: docker://josephhilby/lunch_and_learn_docker:latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test with pytest
+        run: |
+          pytest -s
