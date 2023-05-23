@@ -12,8 +12,10 @@ class UserTests(TestCase):
             api_key='api_key'
         )
 
+
     def test_user_instance(self):
         assert isinstance(self.user, User)
+
 
     def test_user_state(self):
         assert self.user.name == 'name'
