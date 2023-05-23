@@ -14,6 +14,7 @@ class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = User
 
+
 class FavoriteFactory(factory.django.DjangoModelFactory):
     country = factory.LazyAttribute(lambda x: faker.country())
     recipe_link = factory.LazyAttribute(lambda x: faker.url())
@@ -21,3 +22,11 @@ class FavoriteFactory(factory.django.DjangoModelFactory):
 
     class Meta:
         model = Favorite
+
+
+class UserFavoriteFactory(factory.django.DjangoModelFactory):
+    user_id = factory.SubFactory(UserFactory)
+    favorite_id = factory.SubFactory(FavoriteFactory)
+
+    class Meta:
+        model = UserFavorite
