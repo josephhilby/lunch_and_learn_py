@@ -1,5 +1,6 @@
 # API Keys #
 *Key.pem
+dockertoken.txt
 
 # Django #
 *.log
