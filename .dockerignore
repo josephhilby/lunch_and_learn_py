@@ -1,4 +1,20 @@
-# venv
-*_venv
+# Keys
 *Key.pem
 dockertoken.txt
+
+# Git
+.github
+.gitignore
+
+# Python
+app/__pychache__/
+app/*/__pychache__/
+app/*/*/__pychache__/
+app/*/*/*__pychache__/
+lunch_and_learn_venv/
+.env/
+.venv/
+
+# Pytest
+tests/
+pytest.ini

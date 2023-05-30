@@ -28,4 +28,4 @@ jobs:
         with:
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/lunch_and_learn_docker:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/lunch_and_learn_py:latest
