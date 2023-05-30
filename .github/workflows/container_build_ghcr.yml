@@ -1,8 +1,9 @@
-name: Publish Docker Image
+name: Publish to GitHub Container Registry
 
 on:
   release:
-    types: ['published']
+    types:
+      - 'published'
 
 env:
   REGISTRY: ghcr.io
@@ -14,6 +15,7 @@ jobs:
     permissions:
       contents: read
       packages: write
+
     steps:
       -
         name: Checkout Branch
@@ -32,7 +34,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
       -
-        name: Build and Push Docker Image
+        name: Build and Push
         uses: docker/build-push-action@v3
         with:
           context: .
