@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: arm64v8/influxdb:latest
 
     steps:
       -
