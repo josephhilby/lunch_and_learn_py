@@ -8,8 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: arm64v8/influxdb:latest
 
     steps:
       -
@@ -29,5 +27,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           file: ./Dockerfile
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/lunch_and_learn_py:latest
